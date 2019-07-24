@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import Intro from '../Intro'
-import Time from '../Time'
-import './App.css'
+import Intro from '../Intro';
+import Time from '../Time';
+import './App.css';
+import 'whatwg-fetch';
 
 
 class App extends Component {
   state = {
-    series: []
+    series: [],
   }
 
   componentDidMount() {
-    const series = ["Band of Brothers", "Law & Order"];
-
-    setTimeout(()=> {
-      this.setState({series: series})
-    }, 2000);
+    fetch('http://api.tvmaze.com/search/shows?q=law+%26+order')
+      .then(response => response.json())
+        .then(json => this.setState({ series: json}))
   }
 
 
@@ -22,8 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Intro message="Here you can find all of your most loved series"/>
-        The length of series array - {this.state.series.length}
-        <div>{this.state.series}</div>
+        The length of series array - {this.state.series.length}        
         <Time />
       </div>
     );
