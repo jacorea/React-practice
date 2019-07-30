@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 
+
 const SeriesListItem = ({series}) => (
     <li>
         {series.show.name}
