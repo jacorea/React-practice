@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Series from '../../Containers/Series';
-import Intro from '../Intro';
+import Main from '../Main';
 import Time from '../Time';
 import './App.css';
 import 'whatwg-fetch';
@@ -12,9 +11,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Intro message="Here you can find all of your most loved series"/>     
-        <Series />  
+      <div className="App">  
+        <Main />  
         <Time />
       </div>
     );

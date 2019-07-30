@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import SeriesList from '../../Components/SeriesList'
-import Loader from '../../Components/Loader'
+import React, { Component } from 'react';
+import SeriesList from '../../Components/SeriesList';
+import Loader from '../../Components/Loader';
+import Intro from '../../Components/Intro';
 
 export class Series extends Component {
     state = {
@@ -22,6 +23,7 @@ export class Series extends Component {
         const { series, seriesName, isFetching } = this.state
         return (
             <div>
+                <Intro message="Here you can find all of your most loved series"/>   
                 <div>
                     <input 
                         value={seriesName}
